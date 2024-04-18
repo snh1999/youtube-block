@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Youtube-Blocker",
+    "version": "1.0.0",
+    "description": "Block videos from annoying channels/uploaders from your search or home page.",
+    "permissions": ["tabs", "storage"],
+    "host_permissions": ["https://*.youtube.com/*"],
+    "icons": {
+        "32": "icons/icon32.png",
+        "64": "icons/icon64.png",
+        "128": "icons/icon128.png",
+        "256": "icons/256.png"
+    },
+    "background": {
+        "service_worker": "service_worker.js",
+        "type": "module"
+    },
+    "content_script": [
+        {
+            "matches": ["https://*.youtube.com/*"],
+            "js": ["content_script.js"]
+        }
+    ]
+}
